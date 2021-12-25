@@ -1,0 +1,34 @@
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
+import { login } from '../../redux/actions/authAction'
+import './_login.scss'
+
+const Login = () => {
+    const dispatch = useDispatch()
+
+    const accessToken = useSelector(state => state.auth.accessToken)
+
+    const handleLogin = () => {
+        dispatch(login())
+    }
+
+    const history = useNavigate()
+
+    useEffect(() => {
+        if(accessToken){
+            history('/')
+        }
+    },[accessToken, history])
+
+    return (
+        <div className='login'>
+            <div className="login__container">
+                <img src="data:image/png;base64,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" alt="" />
+                <button onClick={handleLogin}>Login with google</button>
+            </div>
+        </div>
+    )
+}
+
+export default Login

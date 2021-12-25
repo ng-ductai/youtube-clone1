@@ -1,0 +1,106 @@
+@import "../../scss/base";
+
+.videoMetaData {
+    &__top {
+        span {
+            cursor: pointer;
+        }
+    }
+ 
+    &__bottom{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &__upper{
+            text-transform: uppercase;          
+        }
+
+        &__mr-15{
+            margin-right: 15px;
+        }
+
+        svg{
+            margin-right: 5px;
+        }
+
+        div {
+            &:nth-child(2){
+                cursor: pointer;
+            }
+        }
+    }
+
+    &__channel {
+        border-top: 0.2px solid $border-color;
+        border-bottom: 0.2px solid $border-color;
+        img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+
+        &__title{
+            font-size: 1.3rem;
+        }
+
+        &__upper{
+            text-transform: uppercase;          
+        }
+
+        span {
+            &:nth-child(2) {
+                font-size: .85rem;
+            }
+        }
+ 
+        button {
+            background-color: red;
+            color: #fff;
+            border-radius: 5px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+
+            &.btn-gray {
+                background-color: gray;
+            }
+
+            &:hover {
+                color: #fff;
+            }
+
+            &:focus {
+                border: none;
+                outline: none;
+            }
+       }
+    }
+
+    &__description {
+        font-size: 0.9rem;
+        white-space: pre-line;
+        padding-left: 65px;
+        max-width: 700px;
+        
+        .showMoreText {
+            text-decoration: none;
+            display: block;
+            margin: 1rem 0;
+            color: #fff;
+            font-weight: 500;
+        }
+    }
+ }
+ 
+ @media (max-width: $breakpoint-small) {
+    .videoMetaData {
+        &__bottom{
+            display: block;
+        }
+
+        h5 {
+            font-size: 1.1rem;
+        }
+    }
+ }

@@ -1,0 +1,78 @@
+@import "../../scss/base";
+
+.sidebar {
+    background: $black-secondary;
+    display: flex;
+    flex-direction: column;
+    min-width: 210px;
+    padding: 1rem;
+    transition: transform 0.2s ease-in;
+    position: sticky;
+    top: 10vh;
+    left: 0;
+
+
+    a {
+        color: $text-color;
+        text-decoration: none;
+        &:hover {
+            color: $text-color;
+        }
+    }
+
+    li {
+        display: flex;
+        align-items: center;
+        padding: 0.5rem .7rem;
+        cursor: pointer;
+
+        span {
+            margin-left: 1rem;
+            font-size: 16px;
+            font-weight: 500;
+            letter-spacing: 0.4px;
+        }
+
+        &:hover {
+            background-color: $border-color;
+        }
+    }
+
+    hr {
+        background-color: $border-color;
+        color: $text-color;
+    }
+
+    &.open {
+        transform: translateX(0);
+    }
+
+    &__title {
+        font-size: 1rem;
+        font-weight: 500;
+        text-transform: uppercase;
+    }
+}
+
+@media (max-width: $breakpoint-medium) {
+    .sidebar {
+        min-width: 140px;
+        transform: translateX(-100%);
+        position: fixed;
+        z-index: 999;
+        padding: 1rem 0.5rem;
+
+        li{
+            justify-content: flex-start;
+
+            span {
+                font-size: .75rem;
+            }
+        }
+
+        &__title {
+            font-size: .75rem;
+        }
+    }
+}
+
